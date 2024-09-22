@@ -20,19 +20,42 @@
   }
 }
 
-/* Apply Rubik for body text */
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-rubik), sans-serif;
+  background: linear-gradient(135deg, #1f1f1f 0%, #181818 50%, #1f1f1f 100%);
+  background-size: 300% 300%;
+  animation: backgroundScroll 10s ease infinite;
 }
 
-/* Use Playfair Display for headings */
+@keyframes backgroundScroll {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 h1, h2, h3 {
   font-family: var(--font-playfair), serif;
+  color: #EFF0F0;
 }
 
-/* Use Fira Code for code blocks */
+p {
+  font-family: var(--font-rubik), sans-serif;
+  color: #B3B3B3;
+}
+
 code {
   font-family: var(--font-fira-code), monospace;
+}
+
+
+nav {
+  height: 64px;
 }
