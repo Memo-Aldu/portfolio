@@ -13,9 +13,14 @@ export default function ExperiencePage() {
   const timelineControls = useAnimation();
 
   useEffect(() => {
-    let isMounted = false;
+    let isMounted = true;
+
+    const techStackNode = techStackRef.current;
+    const timelineNode = timelineRef.current;
+
     const techStackObserver = new IntersectionObserver(
       (entries) => {
+        if (!isMounted) return;
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             techStackControls.start("visible");
@@ -41,15 +46,13 @@ export default function ExperiencePage() {
       { threshold: 0.3 }
     );
   
-    // Mount the observers when the component is mounted
-    if (techStackRef.current) techStackObserver.observe(techStackRef.current);
-    if (timelineRef.current) timeLineObserver.observe(timelineRef.current);
+    if (techStackNode) techStackObserver.observe(techStackNode);
+    if (timelineNode) timeLineObserver.observe(timelineNode);
 
-    // Cleanup function to unobserve the elements when the component unmounts
     return () => {
       isMounted = false;
-      if (techStackRef.current) techStackObserver.unobserve(techStackRef.current);
-      if (timelineRef.current) timeLineObserver.unobserve(timelineRef.current);
+      if (techStackNode) techStackObserver.unobserve(techStackNode);
+      if (timelineNode) timeLineObserver.unobserve(timelineNode);
     };
   }, [timelineControls, techStackControls]);
 
@@ -69,7 +72,8 @@ export default function ExperiencePage() {
         className="timeline-section  min-h-[calc(100vh-64px)] flex flex-col justify-center items-center p-4"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <h2 className="text-3xl lg:text-5xl font-bold text-center mb-8">Experience</h2>
+          <h2 className="text-3xl lg:text-5xl font-bold text-center mb-8">My Experience</h2>
+
           <Timeline />
         </div>
       </motion.section>

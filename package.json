@@ -9,8 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-pdf-viewer/core": "^3.12.0",
+    "@react-pdf-viewer/default-layout": "^3.12.0",
     "framer-motion": "^11.5.5",
-    "next": "14.2.13",
+    "next": "^14.2.13",
+    "pdfjs-dist": "^3.0.279",
     "portfolio": "file:",
     "react": "^18",
     "react-dom": "^18",

@@ -1,18 +1,20 @@
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from 'react-icons/fa';
+
 
 export default function Footer() {
   return (
-    <footer className="inline bottom-0 z-50 w-full bg-[#181818] ">
+    <footer className="bg-[#181818] p-4 text-center text-[#EFF0F0] flex-shrink-0">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         <div className="text-xl font-bold">
           <span className="text-[#EFF0F0]">Memo.a</span>
         </div>
 
-        <div className="flex space-x-2 mt-2 md:mt-0">
+        <div className="flex space-x-2 mt-2 md:mt-0 text-center">
           <p>
-            Made with <span className="text-[#F7A650]">🧡</span> by Memo Al-dujaili
-          </p>
+            Made with </p>
+            <FaHeart className="text-[#F7A650] mt-1" />
+          <p>by Memo Al-dujaili</p>
         </div>
 
         <div className="flex space-x-4 text-2xl mt-2 md:mt-0">

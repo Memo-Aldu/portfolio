@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import Character from "@/components/Character";
-import ScrollIndicator from "@/components/ScrollIndicator";
 import ProjectsSection from "@/components/ProjectsSection";
 
 export default function Home() {
@@ -17,6 +16,10 @@ export default function Home() {
 
   useEffect(() => {
     let isMounted = true;
+
+    const introNode = introRef.current;
+    const aboutMeNode = aboutMeRef.current;
+    const projectsNode = projectsRef.current;
 
     // Observer for intro section
     const observer = new IntersectionObserver(
@@ -63,17 +66,15 @@ export default function Home() {
       { threshold: 0.3 }
     );
   
-    // Mount the observers when the component is mounted
-    if (introRef.current) observer.observe(introRef.current);
-    if (aboutMeRef.current) aboutMeObserver.observe(aboutMeRef.current);
-    if (projectsRef.current) projectsObserver.observe(projectsRef.current);
+    if (introNode) observer.observe(introNode);
+    if (aboutMeNode) aboutMeObserver.observe(aboutMeNode);
+    if (projectsNode) projectsObserver.observe(projectsNode);
   
-    // Cleanup function to unobserve the elements when the component unmounts
     return () => {
       isMounted = false;
-      if (introRef.current) observer.unobserve(introRef.current);
-      if (aboutMeRef.current) aboutMeObserver.unobserve(aboutMeRef.current);
-      if (projectsRef.current) projectsObserver.unobserve(projectsRef.current);
+      if (introNode) observer.unobserve(introNode);
+      if (aboutMeNode) aboutMeObserver.unobserve(aboutMeNode);
+      if (projectsNode) projectsObserver.unobserve(projectsNode);
     };
   }, [introControls, aboutMeControls, projectsControls]);
   
@@ -96,7 +97,7 @@ export default function Home() {
         >
           <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 self-start text-start">
             <h1 className="inline-block">
-              Hey, I'm{" "}
+              Hey, I&apos;m{" "}
               <motion.span
                 className="inline-block cursor-pointer"
                 whileHover={{ scale: 1.2, color: "#F7A650"}}
@@ -167,7 +168,6 @@ export default function Home() {
           <ProjectsSection />
         </motion.div>
       </div>
-     <ScrollIndicator />
     </div>
   );
 }

@@ -14,7 +14,7 @@ type TimelineCardProps = {
 };
 
 
-export default function ExperienceCard({ position, dateRange, title, subtitle, description, isLeft }: TimelineCardProps) {
+export default function ExperienceCard({dateRange, title, subtitle, description, isLeft }: TimelineCardProps) {
   const { ref, inView } = useInView({
     threshold: 0.2,
     triggerOnce: false,

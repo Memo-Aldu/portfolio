@@ -1,4 +1,3 @@
-// Navbar.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -28,14 +27,14 @@ const Navbar = () => {
           </motion.h1>
         </Link>
 
-        <ul className="flex items-center pt-1 space-x-4 lg:space-x-6 text-sm lg:text-lg text-gray-300">
+        <ul className="flex items-center pt-1 space-x-2 sm:space-x-6 text-sm md:text-lg text-gray-300">
           <li>
             <Link href="/experience" passHref>
               <motion.span
                 className="cursor-pointer hover:text-white transition"
                 variants={hoverAnimation}
                 whileHover="hover"
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.2 }}
               >
                 Experience
               </motion.span>
@@ -62,6 +61,18 @@ const Navbar = () => {
                 transition={{ duration: 0.3 }}
               >
                 Contact
+              </motion.span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/resume" passHref>
+              <motion.span
+                className="cursor-pointer hover:text-white transition"
+                variants={hoverAnimation}
+                whileHover="hover"
+                transition={{ duration: 0.3 }}
+              >
+                Resume
               </motion.span>
             </Link>
           </li>

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Rubik, Playfair_Display, Fira_Code } from 'next/font/google';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollIndicator from "@/components/ScrollIndicator";
 
 const rubik = Rubik({
   subsets: ['latin'],
@@ -35,9 +36,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${rubik.variable} ${playfair.variable} ${firaCode.variable} bg-[#181818] text-[#EFF0F0] antialiased`}>
-        <div className="max-w-5xl mx-auto sm:px-4 px-2 md:px-8 pb-8"> {/* Center content with padding */}
+        <div className="max-w-5xl mx-auto sm:px-4 px-2 md:px-8 pb-8 min-h-screen flex flex-col"> 
           <Navbar />
-          {children}
+          <main className="flex-grow">
+            {children}
+          </main>
+          <ScrollIndicator />
           <Footer />
         </div>
       </body>

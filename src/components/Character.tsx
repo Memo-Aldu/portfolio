@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, ReactNode } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import Link from 'next/link';
 
 export type CharacterProps = {
@@ -14,7 +14,7 @@ export type WordProps = {
   word: string;
   start: number;
   end: number;
-  progress: any;
+  progress: MotionValue<number>;
   isLink?: boolean;
   href?: string;
 };
@@ -23,7 +23,7 @@ export type CharProps = {
   character: string;
   start: number;
   end: number;
-  progress: any;
+  progress: MotionValue<number>;
 };
 
 export default function Character({ children, style, animatedParts }: CharacterProps) {
