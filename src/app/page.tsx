@@ -8,62 +8,78 @@ import ProjectsSection from "@/components/ProjectsSection";
 
 export default function Home() {
   const introRef = useRef<HTMLDivElement>(null);
-  const welcomeRef = useRef<HTMLDivElement>(null);
+  const aboutMeRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
 
   const introControls = useAnimation();
-  const welcomeControls = useAnimation();
+  const aboutMeControls = useAnimation();
   const projectsControls = useAnimation();
 
   useEffect(() => {
+    let isMounted = true;
+
+    // Observer for intro section
     const observer = new IntersectionObserver(
       (entries) => {
+        if (!isMounted) return;
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            if (entry.target === introRef.current) {
-              introControls.start("visible");
-              welcomeControls.start("hidden");
-              projectsControls.start("hidden");
-            } else if (entry.target === welcomeRef.current) {
-              welcomeControls.start("visible");
-              introControls.start("hidden");
-              projectsControls.start("hidden");
-            }
-          }
-        });
-      },
-       // Default threshold for the observer
-      { threshold: 0.5 }
-    );
-
-    if (introRef.current) observer.observe(introRef.current);
-    if (welcomeRef.current) observer.observe(welcomeRef.current);
-
-    // Separate observer for the projects section
-    const projectObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.target === projectsRef.current) {
-            projectsControls.start("visible");
-            welcomeControls.start("hidden");
+            introControls.start("visible");
+          } else {
             introControls.start("hidden");
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.5 }
     );
-
-    if (projectsRef.current) projectObserver.observe(projectsRef.current);
-
+  
+    // Observer for about me section
+    const aboutMeObserver = new IntersectionObserver(
+      (entries) => {
+        if (!isMounted) return;
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            aboutMeControls.start("visible");
+          } else {
+            aboutMeControls.start("hidden");
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+  
+    // Observer for projects section
+    const projectsObserver = new IntersectionObserver(
+      (entries) => {
+        if (!isMounted) return;
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            projectsControls.start("visible");
+          } else {
+            projectsControls.start("hidden");
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+  
+    // Mount the observers when the component is mounted
+    if (introRef.current) observer.observe(introRef.current);
+    if (aboutMeRef.current) aboutMeObserver.observe(aboutMeRef.current);
+    if (projectsRef.current) projectsObserver.observe(projectsRef.current);
+  
+    // Cleanup function to unobserve the elements when the component unmounts
     return () => {
+      isMounted = false;
       if (introRef.current) observer.unobserve(introRef.current);
-      if (welcomeRef.current) observer.unobserve(welcomeRef.current);
-      if (projectsRef.current) projectObserver.unobserve(projectsRef.current);
+      if (aboutMeRef.current) aboutMeObserver.unobserve(aboutMeRef.current);
+      if (projectsRef.current) projectsObserver.unobserve(projectsRef.current);
     };
-  }, [introControls, welcomeControls, projectsControls]);
+  }, [introControls, aboutMeControls, projectsControls]);
+  
 
   return (
-    <div className=" justify-center items-center">
+    <div className="justify-center items-center">
 
       <div className="space-y-3.5">
         {/* Introduction Section */}
@@ -96,30 +112,42 @@ export default function Home() {
           </p>
         </motion.div>
 
-        {/* Welcome Section */}
+        {/* About Me Section */}
         <motion.div
-          ref={welcomeRef}
+          ref={aboutMeRef}
           initial="hidden"
-          animate={welcomeControls}
+          animate={aboutMeControls}
           variants={{
             visible: { opacity: 1, scale: 1 },
             hidden: { opacity: 0, scale: 0.95 },
           }}
           transition={{ duration: 0.7 }}
-          className="min-h-[calc(80vh-64px)] flex flex-col justify-center items-center p-4"
+          className="min-h-[calc(100vh-64px)] flex flex-col justify-center items-center p-4"
         >
+            <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 self-start text-start">
+              <h1 className="inline-block">
+                <motion.span
+                  className="inline-block cursor-pointer"
+                  whileHover={{ scale: 1.2, color: "#F7A650" }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  About Me
+                </motion.span>
+              </h1>
+            </div>
           <Character
             style={{ fontSize: "24px" }}
             animatedParts={[
-              { text: "Welcome to my portfolio, in here you'll find a collection of my" },
+              { text: "I have a passion for designing efficient and scalable systems.  With expertise in cloud computing, microservices, and software architecture. I’ve worked on a variety of impactful" },
               { text: "projects", isLink: true, href: "/projects" },
-              { text: "and"},
-              { text: "experiences", isLink: true, href: "/experience" },
-              { text: "you can also find out more about me!" },
+              { text: "in the telecommunications, financial, and software industries. I have" },
+              { text: "experience", isLink: true, href: "/experience" },
+              { text: "with technologies like AWS, Spring, and Terraform", isLink: false },
+              { text: "to solve real-world problems." }
             ]}
           >
             <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl justify-start self-start">
-              Welcome to my portfolio, in here you'll find a collection of my projects and experiences, you can also find out more about me!
+              I have a passion for designing efficient and scalable systems. With expertise in cloud computing, microservices, and software architecture, I’ve worked on a variety of impactful projects in the telecommunications, financial, and software industries. I have experience with technologies like AWS, Spring, and Terraform to solve real-world problems.
             </p>
           </Character>
         </motion.div>

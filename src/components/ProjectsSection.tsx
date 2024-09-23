@@ -44,7 +44,7 @@ export default function ProjectsSection() {
 
   return (
     <div className="projects-section justify-center">
-      <h2 className="text-4xl font-bold mb-8">Projects</h2>
+      <h1 className="text-7xl font-bold mb-8">Projects</h1>
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <ProjectCard

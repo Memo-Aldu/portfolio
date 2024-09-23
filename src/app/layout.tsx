@@ -23,7 +23,7 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-  title: "Memo's Portfolio",
+  title: "Memo's Al-Dujaili",
   description: "Memo Al-dujaili Personal Website",
 };
 
