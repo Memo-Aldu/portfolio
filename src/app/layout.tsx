@@ -26,6 +26,9 @@ const firaCode = Fira_Code({
 export const metadata: Metadata = {
   title: "Memo's Al-Dujaili",
   description: "Memo Al-dujaili Personal Website",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
