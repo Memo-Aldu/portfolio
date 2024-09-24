@@ -4,6 +4,7 @@ import { Rubik, Playfair_Display, Fira_Code } from 'next/font/google';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollIndicator from "@/components/ScrollIndicator";
+import { Analytics } from '@vercel/analytics/react';
 
 const rubik = Rubik({
   subsets: ['latin'],
@@ -24,7 +25,7 @@ const firaCode = Fira_Code({
 });
 
 export const metadata: Metadata = {
-  title: "Memo's Al-Dujaili",
+  title: "Memo Al-Dujaili",
   description: "Memo Al-dujaili Personal Website",
   icons: {
     icon: "/favicon.ico",
@@ -47,6 +48,7 @@ export default function RootLayout({
           <ScrollIndicator />
           <Footer />
         </div>
+        <Analytics />
       </body>
     </html>
   );
