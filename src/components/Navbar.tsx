@@ -27,7 +27,7 @@ const Navbar = () => {
           </motion.h1>
         </Link>
 
-        <ul className="flex items-center pt-1 space-x-2 sm:space-x-6 text-sm md:text-lg text-gray-300">
+        <ul className="flex items-center pl-2 md:pl-0 pt-1 space-x-2 sm:space-x-6 text-sm md:text-lg text-gray-300">
           <li>
             <Link href="/experience" passHref>
               <motion.span

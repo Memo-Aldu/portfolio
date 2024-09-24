@@ -29,7 +29,7 @@ export default function ExperiencePage() {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
   
     const timeLineObserver = new IntersectionObserver(
@@ -43,7 +43,7 @@ export default function ExperiencePage() {
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
   
     if (techStackNode) techStackObserver.observe(techStackNode);
