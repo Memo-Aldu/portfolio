@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from 'react';
-import { Viewer } from '@react-pdf-viewer/core';
+import { Viewer, Worker } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
-import { Worker } from '@react-pdf-viewer/core';
 
 export default function ResumePage() {
   const [loading, setLoading] = useState(true);
@@ -11,7 +10,7 @@ export default function ResumePage() {
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h2 className="text-3xl lg:text-5xl font-bold text-center mb-8">My Resume</h2>
+      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8">My Resume</h2>
       {/* Full page and download buttons */}
       <div className="flex justify-between items-center mb-4">
         <a

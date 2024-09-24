@@ -72,7 +72,7 @@ export default function ExperiencePage() {
         className="timeline-section  min-h-[calc(100vh-64px)] flex flex-col justify-center items-center p-4"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <h2 className="text-3xl lg:text-5xl font-bold text-center mb-8">My Experience</h2>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8">My Experience</h2>
 
           <Timeline />
         </div>

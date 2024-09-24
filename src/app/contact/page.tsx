@@ -34,7 +34,7 @@ export default function Contact() {
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h2 className="text-3xl lg:text-5xl font-bold text-center mb-8">Contact Me</h2>
+      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8">Contact Me</h2>
 
       {/* Contact Section */}
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
