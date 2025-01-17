@@ -11,11 +11,13 @@ export type ProjectType = {
   
 const projects: ProjectType[] = [
     {
-      title: "CRM App",
-      description: "A Customer Relationship Management App designed to manage and communicate with customers.",
+      title: "BCS App",
+      description: "A Business Communication Software designed to manage and communicate with customers.",
       technologies: ["SpringBoot", "React", "MongoDB", "Azure", "Terraform", "Java"],
       date: "2024",
-      tag: "FULLSTACK"
+      tag: "FULLSTACK",
+      codeLink: "https://github.com/Memo-Aldu?tab=repositories&q=capstone-2024-g27&type=&language=&sort=",
+      demoLink: "https://mango-bay-040a3360f.4.azurestaticapps.net"
     },
     {
       title: "Discord Clone",

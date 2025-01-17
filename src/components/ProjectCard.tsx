@@ -132,7 +132,7 @@ export default function ProjectCard({
 
       <div className="flex justify-between items-center">
         { codeLink && (
-            <Link href={codeLink} passHref>
+            <Link href={codeLink} passHref target='_blank'>
               <motion.span
                 className="cursor-pointer hover:text-white transition"
                 variants={hoverAnimation}
@@ -143,7 +143,7 @@ export default function ProjectCard({
               </motion.span>
             </Link> )}
         { demoLink && (
-            <Link href={demoLink} passHref>
+            <Link href={demoLink} passHref target='_blank'>
                 <motion.span
                 className="cursor-pointer hover:text-white transition"
                 variants={hoverAnimation}
