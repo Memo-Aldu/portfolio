@@ -6,7 +6,7 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 
 export default function ResumePage() {
   const [loading, setLoading] = useState(true);
-  const resumeUrl = '/memo-resume-sep-2024.pdf';
+  const resumeUrl = '/memo-resume-2025.pdf';
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
