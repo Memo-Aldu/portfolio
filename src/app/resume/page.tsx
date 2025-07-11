@@ -7,7 +7,7 @@ import { Worker } from '@react-pdf-viewer/core';
 
 export default function ResumePage() {
   const [loading, setLoading] = useState(true);
-  const resumeUrl = '/memo-resume-sep-2024.pdf';
+  const resumeUrl = '/memo-aldu-resume-06-2025.pdf';
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
