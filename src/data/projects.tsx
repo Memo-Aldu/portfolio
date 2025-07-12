@@ -7,9 +7,23 @@ export type ProjectType = {
     demoLink?: string;
     date: string;
     tag: string;
+    images?: string[];
+    featured?: boolean;
   };
   
 const projects: ProjectType[] = [
+    {
+        title: "Flow Builder",
+        description: "A flow builder app for creating and managing web scraping flows.",
+        technologies: ["NextJS",
+             "Python", "PostgreSQL", "AWS", "Terraform", "Stripe"],
+        codeLink: "https://github.com/Memo-Aldu/flow-builder",
+        demoLink: "https://flow-builder-pi.vercel.app/",
+        date: "2025",
+        tag: "FULLSTACK",
+        images: [],
+        featured: true 
+    },
     {
       title: "CRM App",
       description: "A Customer Relationship Management App designed to manage and communicate with customers.",
@@ -24,7 +38,9 @@ const projects: ProjectType[] = [
       codeLink: "https://github.com/Memo-Aldu/discord-clone",
       demoLink: "https://discord-clone-bay-rho.vercel.app",
       date: "2024",
-      tag: "FULLSTACK"
+      tag: "FULLSTACK",
+      images: [],
+      featured: true
     },
     {
         title: "E-Hotel",
@@ -32,7 +48,9 @@ const projects: ProjectType[] = [
         technologies: ["SpringBoot", "React", "PostgreSQL", "Java", "TypeScript"],
         codeLink: "https://github.com/Memo-Aldu/e-hotel",
         date: "2023",
-        tag: "FULLSTACK"
+        tag: "FULLSTACK",
+        images: [],
+        featured: true
     },
     {
         title: "Nolis",
@@ -57,7 +75,9 @@ const projects: ProjectType[] = [
         codeLink: "https://github.com/Memo-Aldu/flowersON.github.io",
         demoLink: "https://memo-aldu.github.io/flowersON.github.io/",
         date: "2022",
-        tag: "FRONTEND"
+        tag: "FRONTEND",
+        images: [],
+        featured: false
     },
     {
       title: "PMS",

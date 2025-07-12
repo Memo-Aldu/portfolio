@@ -69,10 +69,20 @@ export default function ExperiencePage() {
           hidden: { opacity: 0, scale: 0.95 },
         }}
         transition={{ duration: 0.5 }}
-        className="timeline-section  min-h-[calc(100vh-64px)] flex flex-col justify-center items-center p-4"
+        className="timeline-section min-h-[calc(100vh-64px)] flex flex-col justify-center items-center p-4"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <h2 className="text-3xl lg:text-5xl font-bold text-center mb-8">My Experience</h2>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl lg:text-5xl font-bold mb-4">My Experience</h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+              A journey through my professional development, from university to industry experience
+            </p>
+          </motion.div>
 
           <Timeline />
         </div>
@@ -90,7 +100,17 @@ export default function ExperiencePage() {
         className="experience-section min-h-[calc(100vh-64px)] flex flex-col justify-center items-center p-4"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <h2 className="text-3xl lg:text-5xl font-bold text-center mb-8">Tech Stack</h2>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl lg:text-5xl font-bold mb-4">Tech Stack</h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+              Technologies and tools I work with to build scalable, modern applications
+            </p>
+          </motion.div>
           <TechStack />
         </div>
       </motion.section>

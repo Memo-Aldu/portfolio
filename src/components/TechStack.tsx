@@ -50,9 +50,9 @@ export default function TechStack() {
       ref={stackRef}
       animate={stackInView ? "visible" : "hidden"}
     >
-      {techIcons.map((tech, idx) => (
+      {techIcons.map((tech) => (
         <motion.div
-          key={idx}
+          key={tech.name}
           variants={item}
           whileHover={{ scale: 1.2 }}
           className="flex flex-col items-center text-center"

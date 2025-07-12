@@ -53,15 +53,16 @@ export default function ProjectsPage() {
           />
         </div>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredProjects.map((project, index) => (
+            {filteredProjects.map((project) => (
               <ProjectCard
-                key={index}
+                key={`${project.title}-${project.date}`}
                 date={project.date}
                 title={project.title}
                 description={project.description}
                 technologies={project.technologies}
                 codeLink={project.codeLink}
                 demoLink={project.demoLink}
+                featured={project.featured}
               />
             ))}
           </div>

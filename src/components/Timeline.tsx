@@ -16,24 +16,34 @@ const Timeline = () => {
 
   const experiences = [
     {
+      dateRange: "Feb 2025 - Present",
+      title: "Comtech Telecommunications",
+      subtitle: "Software Engineer",
+      description: "• Designed a system that ingest and process 1000 events/s, using AWS.\n • Automated client onboarding via Terraform and automation tools.",
+      type: "work",
+    },
+    {
       dateRange: "Sep 2020 - Dec 2024",
       title: "University of Ottawa",
       subtitle: "Bachelor of Applied Science Software Engineering",
-      description: "",
+      description: "Graduated with honors, focusing on software architecture, algorithms, and modern development practices.",
+      type: "education",
     },
     {
       dateRange: "May 2024 - Aug 2024",
       title: "Comtech Telecommunications",
       subtitle: "CO-OP Cloud Engineer",
       description:
-        "• Created QA environment using Terraform/Terragrunt.\n• Improved uptime through auto-scaling and AWS Fargate\n• Converted monolith to serverless microservices.",
+        "• Created QA environment using Terraform/Terragrunt\n• Improved uptime through auto-scaling and AWS Fargate\n• Converted monolith to serverless microservices\n• Collaborated with cross-functional teams on cloud migration",
+      type: "work",
     },
     {
       dateRange: "May 2023 - Sep 2023",
       title: "Zafin",
       subtitle: "CO-OP Software Developer",
       description:
-        "• Developed NLP platform using OpenAI and Hugging Face.\n• Built microservices with Spring Boot and Flask.\n• Organized Agile rituals, improving team delivery.",
+        "• Developed NLP platform using OpenAI and Hugging Face\n• Built microservices with Spring Boot and Flask\n• Organized Agile rituals, improving team delivery\n• Implemented automated testing and CI/CD pipelines",
+      type: "work",
     },
     {
       dateRange: "Sep 2022 - Dec 2022",
@@ -66,17 +76,17 @@ const Timeline = () => {
 
           {experiences.map((exp, index) => (
             <div
-              key={index}
+              key={`${exp.title}-${exp.dateRange}`}
               className={`w-full sm:w-1/2 p-4 ${index % 2 === 0 ? "self-end" : "self-start"}`}
             >
               <ExperienceCard
-                key={index}
                 position={index + 1}
                 dateRange={exp.dateRange}
                 title={exp.title}
                 subtitle={exp.subtitle}
                 description={exp.description}
                 isLeft={index % 2 === 0}
+                type={exp.type}
               />
             </div>
           ))}
