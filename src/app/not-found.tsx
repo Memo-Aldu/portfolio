@@ -80,10 +80,10 @@ export default function NotFound() {
             Oops! Page Not Found
           </h2>
           <p className="text-lg text-gray-400 mb-2">
-            The page you're looking for seems to have wandered off into the digital void.
+            The page you&apos;re looking for seems to have wandered off into the digital void.
           </p>
           <p className="text-base text-gray-500">
-            Don't worry, even the best people get lost sometimes.
+            Don&apos;t worry, even the best people get lost sometimes.
           </p>
         </motion.div>
 

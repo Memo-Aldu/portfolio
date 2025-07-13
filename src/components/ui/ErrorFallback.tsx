@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface ErrorFallbackProps {
-  error?: Error;
   resetError?: () => void;
   title?: string;
   description?: string;
@@ -12,7 +11,6 @@ interface ErrorFallbackProps {
 }
 
 export function ErrorFallback({
-  error,
   resetError,
   title = "Something went wrong",
   description = "We encountered an unexpected error. Please try again.",

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 
 interface LightboxProps {
@@ -166,7 +166,7 @@ export function Lightbox({
               >
                 {images.map((image, index) => (
                   <motion.button
-                    key={index}
+                    key={`thumbnail-${image}-${index}`}
                     className={`relative w-16 h-16 rounded border-2 overflow-hidden flex-shrink-0 ${
                       index === currentIndex ? "border-[#F7A650]" : "border-gray-600"
                     }`}
