@@ -8,7 +8,7 @@ const splitText = (text: string) => {
       key={index}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.05, duration: 0.3 }}
+      transition={{ delay: index * 0.02, duration: 0.3 }}
       style={{ display: "inline-block" }}
     >
       {char === " " ? "\u00A0" : char}

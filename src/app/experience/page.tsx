@@ -83,7 +83,6 @@ export default function ExperiencePage() {
               A journey through my professional development, from university to industry experience
             </p>
           </motion.div>
-
           <Timeline />
         </div>
       </motion.section>

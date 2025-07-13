@@ -26,7 +26,7 @@ export default function ProjectsPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 justify-center">
       <div className="projects-section justify-center">
-        <h2 className="text-3xl lg:text-5xl font-bold text-center mb-8">My Projects</h2>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8">My Projects</h2>
 
         <div className="flex flex-col md:flex-row md:justify-between items-center mb-8 space-y-4 md:space-y-0">
           {/* Filter Dropdown */}
